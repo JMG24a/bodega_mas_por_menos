@@ -1,0 +1,80 @@
+*{
+  margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	border: none;
+	outline: none;
+}
+body{
+  margin: 0;
+  padding: 0;
+  background-image: url("../../img/body.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.register-container{
+  position: relative;
+  width: 25%;
+  margin: 0 auto;
+  margin-top: 10%;
+  padding: 10px;
+  border-radius: 25px;
+  background-color: rgba(0, 0, 0, 0.286);
+}
+.logo-register{
+  position: absolute;
+  top: -45px;
+  left: calc(50% - 40px);
+  width: 80px;
+  height: 80px;
+  background-image: url("../../img/user.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.register-card{
+  width: 85%;
+  margin: 0 auto;
+}
+.register-card h2{
+  margin-top: 6%;
+  margin-bottom: 8%;
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 100;
+  color: white;
+}
+.register-card form{
+  display: flex;
+  flex-direction: column;
+}
+.container-form input{
+  margin: 10px;
+  padding: 10px;
+  font-size: 1.4rem;
+  color: white;
+  background-color: rgba(255, 0, 0, 0);
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.755);
+}
+.container-form input::placeholder{color: rgba(255, 255, 255, 0.755)}
+.container-form button{
+  margin: 10px;
+  margin-top: 30px;
+  padding: 15px;
+  font-size: 1.4rem;
+  color: white;
+  background-color: rgba(255, 0, 0, 0);
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.755);
+}
+.container-form button:hover{
+  background-color: aliceblue;
+  border-radius: 25px;
+  color: black;
+}
+.container-form p{
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: rgb(255, 16, 104);
+}

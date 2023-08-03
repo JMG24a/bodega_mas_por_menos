@@ -1,0 +1,115 @@
+*{
+  margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	border: none;
+	outline: none;
+}
+body{
+  margin: 0;
+  padding: 0;
+  background-image: url("../../img/body.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.dashBoard-container{
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(11, 1fr);
+  gap: 1.5px;
+  width: 95%;
+  height: 95vh;
+  margin: 0 auto;
+  margin-top: 1%;
+  border-radius: 25px;
+}
+.tool-bar{
+  grid-column: 1/6;
+  grid-row: 1/2;
+  border-radius: 20px 20px 0px 0px;
+  background-color: rgba(0, 0, 0, 0.307);
+}
+.tool-bar ul{
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  justify-content: space-around;
+  color: white;
+}
+.tool-bar ul li a{
+  color: white;
+}
+.menu-container{
+  grid-column: 1/2;
+  grid-row: 2/12;
+  border-radius: 0px 0px 0px 20px;
+  background-color: rgba(0, 0, 0, 0.307);
+}
+.menu-container ul{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-self: center;
+  padding: 10px;
+}
+.menu-container ul li{
+  margin: 15px;
+  border-bottom: 1px solid white;;
+  cursor: pointer
+}
+.menu-container ul li a{
+  color: white;
+  cursor: pointer
+}
+.dashBoard-card{
+  grid-column: 2/6;
+  grid-row: 2/12;
+  border-radius: 0px 0px 20px 0px;
+  background-color: rgba(0, 0, 0, 0.419);
+}
+.dashBoard{
+  position: relative;
+  width: 97%;
+  margin: 0 auto;
+  margin-top: 5px;
+  color: aliceblue;
+}
+.dashBoard-invoice table{
+  width: 100%;
+  color: white;
+  border-radius: 25px;
+  background-color: rgba(240, 248, 255, 0.451);
+}
+.dashBoard-invoice table tr{
+  text-align: center;
+  color: white;
+}
+.dashBoard-invoice p{
+  position: absolute;
+  right: 35px;
+  bottom: -20px;
+  color: white;
+}
+.picture{
+  width: 25px;
+  height: 25px;
+  background-image: url("../../img/user.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.container-items{
+  margin-top: 4%;
+  color: white;
+  text-align: center;
+}
+.item-card{
+  display: flex;
+  width: 97%;
+  margin: 3px auto;
+  border-radius: 25px;
+  align-items: center;
+  justify-content: space-around;
+  background-color: rgba(240, 248, 255, 0.287);
+}

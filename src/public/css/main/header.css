@@ -1,0 +1,36 @@
+header{
+  background-color: rgb(200, 11, 11);
+}
+nav{
+  width: 100%;
+  text-align: center;
+}
+nav ul{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.382);
+}
+ul li{
+  display: flex;
+  width: 100%;
+
+}
+li a{
+  font-size: 12px;
+  width: 100%;
+  margin: 10px;
+  color: white;
+}
+
+@media (min-width: 700px){
+  nav ul{
+    width: 70%;
+    margin: 0 auto;
+    border-radius: 20px;
+  }
+  li a{
+    font-size: 18px;
+    color: white;
+  }
+}

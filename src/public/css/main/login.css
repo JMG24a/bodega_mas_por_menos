@@ -1,0 +1,129 @@
+*{
+  margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	border: none;
+	outline: none;
+}
+body{
+  margin: 0;
+  padding: 0;
+}
+.paralax{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow-x:hidden;
+  overflow-y:hidden;
+}
+#text{
+  position: absolute;
+  font-size: 32px;
+  font-weight: 900;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  z-index: 10;
+  top: 15%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+.paralax img#hill1{
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+.paralax img#hill2{
+  position: absolute;
+    width: 100%;
+  z-index: 2;
+}
+.paralax img#hill3{
+  position: absolute;
+    width: 100%;
+  z-index: 3;
+}
+.paralax img#hill4{
+  position: absolute;
+    width: 100%;
+  z-index: 4;
+}
+.paralax img#hill5{
+  position: absolute;
+    width: 100%;
+  z-index: 5;
+}
+.paralax img#leaf{
+  position: absolute;
+  width: 100%;
+  z-index: 6;
+}
+.paralax img#plant{
+  position: absolute;
+  width: 100%;
+  z-index: 7;
+}
+.paralax img#tree{
+  position: absolute;
+  width: 100%;
+  z-index: 6;
+}
+
+.content{
+  position: relative;
+  display: block;
+  padding: 100px 20%;
+  background-color: rgb(0 51 41);
+  color: white;
+  z-index: 10;
+}
+
+.container_login{
+  margin: 15px auto;
+  width: 70%;
+  border-radius: 10px;
+  background-color: rgba(0, 174, 255, 0.123);
+}
+
+.container_login p{
+  margin: 5px;
+  font-size: 1.0rem;
+}
+
+.container_login p a{
+  margin: 5px;
+  font-size: 1.1rem;
+  color: rgb(69, 7, 4);
+}
+.container_login p a:hover{
+  margin: 5px;
+  font-size: 1.1rem;
+  color: white;
+}
+
+.container_login form{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.container_login form input{
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+@media (min-width: 900px){
+  .container_login{
+    width: 25%;
+  }
+  #text{
+    font-size: 68px;
+  }
+}
