@@ -92,9 +92,17 @@ body{
   bottom: -20px;
   color: white;
 }
+.container_name_picture{
+  display: flex;
+  align-items: center;
+  background: red;
+  width: 180px;
+  justify-content: space-between;
+}
 .picture{
   width: 25px;
   height: 25px;
+  margin: 10px;
   background-image: url("../../img/user.png");
   background-repeat: no-repeat;
   background-size: cover;

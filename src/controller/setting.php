@@ -1,8 +1,11 @@
 <?php
-  class Config extends Controller{
+  class Setting extends Controller{
     function __construct(){
       parent::__construct();
-      $this->view->render('setting/config');
+    }
+
+    function render(){
+      $this->view->render('home/setting');
     }
 
     function saludo(){

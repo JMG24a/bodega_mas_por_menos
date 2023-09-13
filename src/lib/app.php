@@ -2,6 +2,8 @@
   require_once 'controller/error.php';
 
   class App{
+    private $shared_service;
+
     function __construct(){
       //get parameters
       $url = isset($_GET['url']) ? $_GET['url'] : '';
@@ -14,6 +16,7 @@
         require_once $selectController;
         $controller = new Main();
         $controller->loader_model('main');
+        $controller->render();
         return false;
       }
 
@@ -26,6 +29,8 @@
 
         if(isset($url[1])){
           $controller->{$url[1]}();
+        }else{
+          $controller->render();
         }
 
       }else{

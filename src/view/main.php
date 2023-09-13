@@ -33,10 +33,15 @@
           required
         >
         <p id="error_password"></p>
+        <?php
+          if(strlen ( $this->error ) > 1)
+          echo('<p>' . $this->error . '</p>')
+        ?>
         <button id="submit_user">Entrar</button>
       </form>
     </div>
   </section>
   <script src="<?php echo constant('URL');?>public/js/validations.js"></script>
+  <script src="<?php echo constant('URL');?>public/js/storage.js"></script>
 </body>
 </html>
