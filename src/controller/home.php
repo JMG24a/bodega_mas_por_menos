@@ -14,6 +14,12 @@
 
     function get_products(){
       $result = $this->model->get_products();
+      $response = [
+        'mensaje' => 'Respuesta exitosa',
+        'datos' => $result,  // Los datos que deseas enviar de vuelta al cliente
+      ];
+      header('Content-Type: application/json');
+      echo json_encode($response);
     }
   }
 ?>

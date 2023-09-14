@@ -7,18 +7,28 @@
       </a>
     </li>
     <li>
-      <a href="<?php echo constant('URL');?>/customer">
-        Clientes
-      </a>
-    </li>
-    <li>
       <a href="<?php echo constant('URL');?>/history">
         Historial de ventas
       </a>
     </li>
     <li>
+      <a href="<?php echo constant('URL');?>/customer">
+        Clientes
+      </a>
+    </li>
+    <li>
       <a href="<?php echo constant('URL');?>/provider">
         Proveedores
+      </a>
+    </li>
+    <li>
+      <a href="<?php echo constant('URL');?>/employees">
+        Empleados
+      </a>
+    </li>
+    <li>
+      <a href="<?php echo constant('URL');?>/store">
+        Alamacen
       </a>
     </li>
   </ul>

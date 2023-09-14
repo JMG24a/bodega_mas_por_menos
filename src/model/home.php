@@ -11,16 +11,19 @@
       //buscar productos
       try{
         $query = $this->db->connect()->query($sql);
-        $row = $query->fetch();
-        $data['name'] = $row['name'];
-        $data['quantity'] = $row['quantity'];
-        $data['id'] = $row['id'];
-        $data['price'] = $row['price'];
-        $data['image'] = $row['image'];
-        $data['category'] = $row['category'];
+        while($row = $query->fetch()){
+          $item['name'] = $row['name'];
+          $item['quantity'] = $row['quantity'];
+          $item['id'] = $row['id'];
+          $item['price'] = $row['price'];
+          $item['image'] = $row['image'];
+          $item['category'] = $row['category'];
+          array_push($data, $item);
+        }
         //guardar datos en el modelo
-        $this->employee->save_user($data);
-        return 0;
+        $this->product->save_products($data);
+        $response = $this->product->get_products($data);
+        return $response;
       }catch(PDOException $e){
         return [];
       }

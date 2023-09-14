@@ -16,12 +16,13 @@
           <li>configuraciones</li>
         </ul>
       </div>
-      <?php require 'view/components/menu/menu.php'; ?>
+      <?php require 'view/components/menu.php'; ?>
 
       <div class="dashBoard-card">
         <section class="dashBoard">
           <div class="dashBoard-invoice">
-
+            <h3 style="text-align: center;">Informacion de usuario</h3>
+            <?php echo $this->employee['name'] ?>
           </div>
         </section>
       </div>

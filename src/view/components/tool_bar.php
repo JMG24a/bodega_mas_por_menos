@@ -9,6 +9,6 @@
       </div>
     </li>
     <li>BODEGA COMUNITARIA + x -</li>
-    <li><a style="color: white;" href="<?php echo constant('URL');?>/settign">configuraciones</a></li>
+    <li><a style="color: white;" href="<?php echo constant('URL');?>/setting">configuraciones</a></li>
   </ul>
 </div>

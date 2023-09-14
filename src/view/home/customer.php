@@ -9,8 +9,8 @@
   </head>
   <body>
     <section class="dashBoard-container">
-      <?php require 'view/components/menu/tool_bar.php'; ?>
-      <?php require 'view/components/menu/menu.php'; ?>
+      <?php require 'view/components/tool_bar.php'; ?>
+      <?php require 'view/components/menu.php'; ?>
 
       <div class="dashBoard-card">
         <div class="dashBoard-invoice">

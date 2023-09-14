@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Location" content="http://localhost:8080/">
-  <link rel='stylesheet' href="<?php echo constant('URL');?>public/css/main/main.css">
+  <link rel='stylesheet' href="<?php echo constant('URL');?>public/css/auth/auth.css">
   <title>Bodega Comunitaria</title>
 </head>
 <body>
@@ -13,7 +13,7 @@
     <div class="register-card">
       <h2>Iniciar</h2>
       <form
-        action="<?php echo constant('URL');?>/main/init_session"
+        action="<?php echo constant('URL');?>/auth/init_session"
         method="POST"
         class="container-form"
       >

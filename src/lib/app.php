@@ -1,9 +1,5 @@
 <?php
-  require_once 'controller/error.php';
-
   class App{
-    private $shared_service;
-
     function __construct(){
       //get parameters
       $url = isset($_GET['url']) ? $_GET['url'] : '';
@@ -12,10 +8,10 @@
       // var_dump($url);
 
       if(empty($url[0])){
-        $selectController = 'controller/main.php';
+        $selectController = 'controller/auth.php';
         require_once $selectController;
-        $controller = new Main();
-        $controller->loader_model('main');
+        $controller = new Auth();
+        $controller->loader_model('auth');
         $controller->render();
         return false;
       }
@@ -35,6 +31,7 @@
 
       }else{
         $controller = new Errors();
+        $controller->render();
       }
     }
   }
