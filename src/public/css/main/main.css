@@ -6,12 +6,26 @@
 	border: none;
 	outline: none;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root{
+  --theme:linear-gradient(135deg, rgb(32, 32, 32) 50%, rgb(9, 162, 250));
+  --text-color: #000;
+  --primary-color:rgba(255, 255, 255, .5);
+}
+
+html{
+  min-height: 100%;
+}
+
 body{
-  margin: 0;
-  padding: 0;
-  background-image: url("../../img/body.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  font-family: 'Poppins' ,sans-serif;
+  min-height: 100vh;
+  background: var(--theme);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .register-container{
   position: relative;
@@ -76,5 +90,5 @@ body{
 .container-form p{
   font-size: 1.2rem;
   font-weight: 700;
-  color: rgb(255, 16, 104);
+  color: rgb(10, 9, 10);
 }
