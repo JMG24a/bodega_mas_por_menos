@@ -5,7 +5,7 @@
     <li>
       <div style="display: flex; align-items: center; width: 150px; justify-content: space-between;">
         <div class="picture"></div>
-        <?php echo('<p>' . $this->employee['name'] . '</p>')?>
+        <?php echo('<p>' . $this->employee['name'] . " " . $this->employee['lastname'] . '</p>')?>
       </div>
     </li>
     <li>BODEGA COMUNITARIA + x -</li>

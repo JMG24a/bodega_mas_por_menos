@@ -9,7 +9,17 @@
       session_start();
       $employee = $_SESSION['employee'];
       $this->view->employee = $employee;
-      $this->view->render('home/provider');
+      $this->view->render('home/employees');
+    }
+
+    function get_employees(){
+      $result = $this->model->get_employees();
+      $response = [
+        'mensaje' => 'Respuesta exitosa',
+        'datos' => $result,  // Los datos que deseas enviar de vuelta al cliente
+      ];
+      header('Content-Type: application/json');
+      echo json_encode($response);
     }
   }
 ?>

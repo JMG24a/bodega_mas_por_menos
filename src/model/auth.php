@@ -11,7 +11,7 @@
 
     public function login($id){
       $data = [];
-      $sql = "SELECT * FROM empleados WHERE id = '" . $id . "'";
+      $sql = "SELECT * FROM empleados WHERE dni = '" . $id . "'";
       try{
         $query = $this->db->connect()->query($sql);
         $row = $query->fetch();
@@ -20,16 +20,19 @@
           // No se encontraron resultados
           return false;
         }
-        $data['name'] = $row['name'];
-        $data['role'] = $row['role'];
         $data['id'] = $row['id'];
+        $data['name'] = $row['name'];
+        $data['lastname'] = $row['lastname'];
+        $data['dni'] = $row['dni'];
+        $data['role'] = $row['role'];
+        $data['age'] = $row['age'];
+        $data['email'] = $row['email'];
         $data['password'] = $row['password'];
+        $data['phone'] = $row['phone'];
         $data['address'] = $row['address'];
         $data['reference'] = $row['reference'];
         $data['state'] = $row['state'];
         $data['city'] = $row['city'];
-        $data['account_id'] = $row['account_id'];
-        $data['phone'] = $row['phone'];
         //guardar datos en el modelo
         $this->employee->save_user($data);
         return 0;
