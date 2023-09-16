@@ -16,8 +16,8 @@
 
     public function connect(){
       try{
-        $connection = "mysql:host=db;port=3306;dbname=data_uptaeb";
-        // $connection = "mysql:host=" . $this->host . ";port=6033" . ";dbname=" . $this->db;
+        // $connection = "mysql:host=db;port=3306;dbname=data_uptaeb";
+        $connection = "mysql:host=".$this->host.";port=3306".";dbname=".$this->db;
         $options = [
           PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
           PDO::ATTR_EMULATE_PREPARES => false,

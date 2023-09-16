@@ -9,34 +9,46 @@
 
     }
 
-    public function get_employees(){
+    public function login($id){
       $data = [];
-      $sql = "SELECT * FROM empleados";
-      //buscar productos
+      $sql = "SELECT * FROM empleados WHERE id = '" . $id . "'";
       try{
         $query = $this->db->connect()->query($sql);
-        while($row = $query->fetch()){
-          $item['id'] = $row['id'];
-          $item['name'] = $row['name'];
-          $item['lastname'] = $row['lastname'];
-          $item['dni'] = $row['dni'];
-          $item['role'] = $row['role'];
-          $item['age'] = $row['age'];
-          $item['email'] = $row['email'];
-          $item['password'] = $row['password'];
-          $item['phone'] = $row['phone'];
-          $item['address'] = $row['address'];
-          $item['reference'] = $row['reference'];
-          $item['state'] = $row['state'];
-          $item['city'] = $row['city'];
-          array_push($data, $item);
+        $row = $query->fetch();
+        $query->execute();
+        if ($query->rowCount() === 0) {
+          // No se encontraron resultados
+          return false;
         }
-        return $data;
+        $data['name'] = $row['name'];
+        $data['role'] = $row['role'];
+        $data['id'] = $row['id'];
+        $data['password'] = $row['password'];
+        $data['address'] = $row['address'];
+        $data['reference'] = $row['reference'];
+        $data['state'] = $row['state'];
+        $data['city'] = $row['city'];
+        $data['account_id'] = $row['account_id'];
+        $data['phone'] = $row['phone'];
+        //guardar datos en el modelo
+        $this->employee->save_user($data);
+        return 0;
       }catch(PDOException $e){
-        return [];
+        return false;
       }
-      $query = $this->db->connect()->query($sql);
-      return $result;
+    }
+
+    public function delete_employee($id){
+      $sql = "DELETE FROM empleados WHERE id = '" . $id . "'";
+      try{
+        $query = $this->db->connect()->query($sql);
+        $row = $query->fetch();
+        echo $row;
+        return 0;
+      }catch(PDOException $e){
+        return false;
+      }
+
     }
 
     public function get_user(){

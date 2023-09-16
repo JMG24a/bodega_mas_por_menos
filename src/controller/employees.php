@@ -21,5 +21,15 @@
       header('Content-Type: application/json');
       echo json_encode($response);
     }
+
+    function delete_employee(){
+      $result = $this->model->delete_employee();
+      $response = [
+        'mensaje' => 'Respuesta exitosa',
+        'datos' => $result,  // Los datos que deseas enviar de vuelta al cliente
+      ];
+      header('Content-Type: application/json');
+      echo json_encode($response);
+    }
   }
 ?>

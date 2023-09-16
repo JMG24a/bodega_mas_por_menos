@@ -1,8 +1,8 @@
 let element = document.getElementById("request");
 
 function employees(data){
+  element.style.removeProperty("display");
   let result = '';
-  console.log(data);
   data.datos.map((item) => {
     const card = `
     <div class="item-card">
@@ -10,7 +10,7 @@ function employees(data){
       <p>${item.name} ${item.lastname}</p>
       <p>${item.role}</p>
       <p>${item.age}</p>
-      <button id="eliminar/${item.id}">Eliminar</button>
+      <button onclick="buttonHandler('delete', ${item.id})">Eliminar</button>
     </div>
     `;
     result = result.concat("",card);
