@@ -12,7 +12,7 @@
       $this->view->render('home/home');
     }
 
-    function get_products(){
+    function get(){
       $result = $this->model->get_products();
       $response = [
         'mensaje' => 'Respuesta exitosa',

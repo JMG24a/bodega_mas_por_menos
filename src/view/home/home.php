@@ -16,7 +16,7 @@
     <div class="dashBoard-card">
       <section class="dashBoard">
         <div class="dashBoard-invoice">
-          <div style="display: none;" id='request'>home/get_products</div>
+          <div style="display: none;" id='request'>home/get</div>
           <table>
             <tr>
               <td>imagen</td>

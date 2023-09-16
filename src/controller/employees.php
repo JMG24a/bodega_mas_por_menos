@@ -9,10 +9,13 @@
       session_start();
       $employee = $_SESSION['employee'];
       $this->view->employee = $employee;
+      if($employee['role'] !== 'admin'){
+        header("Location: /home");
+      }
       $this->view->render('home/employees');
     }
 
-    function get_employees(){
+    function get(){
       $result = $this->model->get_employees();
       $response = [
         'mensaje' => 'Respuesta exitosa',
@@ -22,7 +25,7 @@
       echo json_encode($response);
     }
 
-    function delete_employee($id){
+    function delete($id){
       $result = $this->model->delete_employee();
       $response = [
         'mensaje' => 'Respuesta exitosa',
