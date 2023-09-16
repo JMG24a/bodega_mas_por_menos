@@ -6,8 +6,8 @@ const submit = document.getElementById("submit_user");
 
 user.addEventListener("keyup", (e)=>{
   error_user.innerText = ""
-  if(!/^[V|E|J|P][0-9]{5,9}$/.test(e.target.value)){
-    error_user.innerText = "Cedula no valida Ej: V12345678"
+  if(!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(e.target.value)){
+    error_user.innerText = "Email no valido"
   }else{
     error_user.innerText = ""
   }

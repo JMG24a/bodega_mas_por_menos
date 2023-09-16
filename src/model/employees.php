@@ -36,6 +36,37 @@
       }
     }
 
+    public function get_employee_by_id($id){
+      $data = [];
+      $sql = "SELECT * FROM empleados WHERE id = '" . $id . "'";
+      try{
+        $query = $this->db->connect()->query($sql);
+        $row = $query->fetch();
+        $query->execute();
+        if ($query->rowCount() === 0) {
+          // No se encontraron resultados
+          return false;
+        }
+        $data['id'] = $row['id'];
+        $data['name'] = $row['name'];
+        $data['lastname'] = $row['lastname'];
+        $data['dni'] = $row['dni'];
+        $data['role'] = $row['role'];
+        $data['age'] = $row['age'];
+        $data['email'] = $row['email'];
+        $data['password'] = $row['password'];
+        $data['phone'] = $row['phone'];
+        $data['address'] = $row['address'];
+        $data['reference'] = $row['reference'];
+        $data['state'] = $row['state'];
+        $data['city'] = $row['city'];
+        //guardar datos en el modelo
+        return $data;
+      }catch(PDOException $e){
+        return false;
+      }
+    }
+
     // public function delete_employee($id){
     //   $sql = "DELETE FROM empleados WHERE id = '" . $id . "'";
     //   try{

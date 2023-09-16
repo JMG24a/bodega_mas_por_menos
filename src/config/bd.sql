@@ -24,7 +24,6 @@ CREATE TABLE clientes (
   lastname VARCHAR(255),
   dni VARCHAR(255),
   age INT,
-  dni VARCHAR(255),
   email VARCHAR(255) UNIQUE,
   phone VARCHAR(255),
   address VARCHAR(255),

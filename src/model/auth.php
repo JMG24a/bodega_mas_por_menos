@@ -11,7 +11,7 @@
 
     public function login($id){
       $data = [];
-      $sql = "SELECT * FROM empleados WHERE dni = '" . $id . "'";
+      $sql = "SELECT * FROM empleados WHERE email = '" . $id . "'";
       try{
         $query = $this->db->connect()->query($sql);
         $row = $query->fetch();
@@ -34,17 +34,10 @@
         $data['state'] = $row['state'];
         $data['city'] = $row['city'];
         //guardar datos en el modelo
-        $this->employee->save_user($data);
-        return 0;
+        return $data;
       }catch(PDOException $e){
         return false;
       }
-    }
-
-    public function get_user(){
-      //buscar empleado registrado
-      $result = $this->employee->get_user();
-      return $result;
     }
   }
 

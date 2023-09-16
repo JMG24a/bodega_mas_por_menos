@@ -67,6 +67,5 @@
       </section>
     </div>
   </section>
-  <script src="<?php echo constant('URL');?>public/js/validations.js"></script>
 </body>
 </html>
