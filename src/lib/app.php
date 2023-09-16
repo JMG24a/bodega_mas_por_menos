@@ -23,6 +23,8 @@
         $controller = new $url[0];
         $controller->loader_model($url[0]);
 
+        $params = sizeof($url);
+
         if(isset($url[1])){
           $controller->{$url[1]}();
         }else{

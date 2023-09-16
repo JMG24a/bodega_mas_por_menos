@@ -6,7 +6,7 @@
   <meta http-equiv="Location" content="http://localhost:8080/">
   <link rel='stylesheet' href="<?php echo constant('URL');?>public/css/home/index.css">
   <script src="<?php echo constant('URL');?>public/js/storages.js"></script>
-  <script src="<?php echo constant('URL');?>public/js/ajax.js"></script>
+  <script src="<?php echo constant('URL');?>public/js/listSomethings.js" defer></script>
   <title>Bodega Comunitaria</title>
 </head>
 <body>

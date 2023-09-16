@@ -22,7 +22,7 @@
       echo json_encode($response);
     }
 
-    function delete_employee(){
+    function delete_employee($id){
       $result = $this->model->delete_employee();
       $response = [
         'mensaje' => 'Respuesta exitosa',
