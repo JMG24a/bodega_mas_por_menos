@@ -10,6 +10,8 @@
   require_once 'lib/model.php';
   require_once 'lib/view.php';
   require_once 'lib/app.php';
+  //controller notfount
+  require_once 'controller/error.php';
   // Punto de arranque de la app
   $app = new App();
 ?>
