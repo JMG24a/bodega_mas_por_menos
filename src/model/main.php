@@ -28,7 +28,7 @@
         $data['reference'] = $row['reference'];
         $data['state'] = $row['state'];
         $data['city'] = $row['city'];
-        $data['account_id'] = $row['account_id'];
+        $data['accound_id'] = $row['accound_id'];
         $data['phone'] = $row['phone'];
         //guardar datos en el modelo
         $this->employee->save_user($data);

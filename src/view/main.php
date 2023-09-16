@@ -13,11 +13,9 @@
 
     <div class="register-card">
 
-      <div class="logo-register"></div>
-
-      <div class="login-card-header">
-          <h1>Sign In</h1>
-          <div>Plase login to use platform</div>
+      <div class="register-card-header">
+          <h1>Iniciar sesión</h1>
+          <div>Por favor inicia sesión para usar la plataforma.</div>
       </div>
 
       <form
@@ -26,21 +24,21 @@
         class="container-form"
       >
         <div class="form-item">
-          <span class="form-item-icon material-symbols-rounded">Cedula</span>
+          <span class="form-item-icon material-symbols-rounded">Person</span>
           <input type="text" name="cedula" id="cedula" placeholder="Usuario" required autofocus>
         </div>
         <p id="error_user"></p>
 
         <div class="form-item">
           <span class="form-item-icon material-symbols-rounded">lock</span>
-          <input type="password" name="password" id="password" placeholder="Contraceña" required>
+          <input type="password" name="password" id="password" placeholder="Contraseña" required>
         </div>
         <p id="error_password"></p>
 
         <div class="form-item-other">
           <div class="checkbox">
             <input type="checkbox" id="RememberMeCheckbox">
-            <label for="RememberMeCheckbox">Remember Me</label>
+            <label for="RememberMeCheckbox">Recordarme</label>
           </div>
         </div>
 
@@ -51,7 +49,7 @@
         <button id="submit_user">Entrar</button>
       </form>
 
-      <div class="login-card-footer">
+      <div class="register-card-footer">
         Ya tienes una cuenta? <a href="#">Crear una cuenta gratis</a>.
       </div>
 
