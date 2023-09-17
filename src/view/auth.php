@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Location" content="http://localhost:8080/">
-  <link rel='stylesheet' href="<?php echo constant('URL');?>public/css/auth/auth.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link rel='stylesheet' href="<?php echo constant('URL');?>public/css/auth/auth.css">
   <title>Bodega Comunitaria</title>
 </head>
 <body>
