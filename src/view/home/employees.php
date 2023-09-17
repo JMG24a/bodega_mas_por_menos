@@ -15,6 +15,10 @@
     <?php require 'view/components/tool_bar.php'; ?>
     <?php require 'view/components/menu.php'; ?>
     <div class="dashBoard-card">
+      <div>
+        <p>Panel de empleados</p>
+        <a href="<?php echo constant('URL');?>/employees/post">Agregar nuevo empleado</a>
+      </div>
       <section class="container-items">
         <div style="display: none;" id='request'>employees/get</div>
       </section>
