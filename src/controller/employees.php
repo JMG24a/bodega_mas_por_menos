@@ -36,13 +36,6 @@
       $this->view->render('home/form_employee');
     }
 
-    function edit_save(){
-      session_start();
-      $employee = $_SESSION['employee'];
-      $this->view->employee = $employee;
-      $this->view->render('home/form_employee');
-    }
-
     function post(){
       session_start();
       $employee = $_SESSION['employee'];
@@ -51,6 +44,27 @@
         header("Location: /home");
       }
       $this->view->render('home/form_employee');
+    }
+
+    function edit_save($param = null){
+      $id = $param[0];
+      $data = [];
+      $data['id'] = $id;
+      $data['name'] = $_POST['email'];
+      $data['lastname'] = $_POST['password'];
+      $data['dni'] = $_POST['email'];
+      $data['age'] = $_POST['password'];
+      $data['email'] = $_POST['email'];
+      $data['phone'] = $_POST['phone'];
+      $data['role'] = $_POST['email'];
+      $data['password'] = $_POST['password'];
+      $data['address'] = $_POST['password'];
+      $data['reference'] = $_POST['email'];
+      $data['state'] = $_POST['password'];
+      $data['city'] = $_POST['email'];
+
+      $this->model->edit_save($data);
+      header("Location: /employees");
     }
 
     function delete($id){

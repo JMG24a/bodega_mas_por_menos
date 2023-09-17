@@ -67,6 +67,27 @@
       }
     }
 
+    public function edit_save($data){
+      $sql = "SELECT * FROM empleados WHERE id = '" . $data['id'] . "'";
+      try{
+        $query = $this->db->connect()->query($sql);
+        $row = $query->fetch();
+        $query->execute();
+        if ($query->rowCount() === 0) {
+          // No se encontraron resultados
+          $sql2 = "INSERT INTO `empleados`(`name`, `lastname`, `dni`, `role`, `age`, `email`, `password`, `phone`, `address`, `reference`, `state`, `city`) VALUES ('?','?','?','?','?','?','?','?','?','?','?','?','?')";
+          $insert = $this->db->connect()->query($sql2);
+          $insert->execute([$data]);
+          return $insert;
+        }
+        $sql3 = "UPDATE empleados SET name = " . $data['name'] . ", lastname = " . $data['lastname'] . ", dni= " . $data['dni'] . ", role= " . $data['role'] . ", age= " . $data['age'] . ", email= " . $data['email'] . ", password= " . $data['password'] . ", phone= " . $data['phone'] . ", address= " . $data['address'] . ", reference= " . $data['reference'] . ", state= " . $data['state'] .   ", city= " . $data['city'] . " WHERE id =" . $data['id'];
+
+        return $sql3;
+        }catch(PDOException $e){
+          echo $error;
+        }
+    }
+
     // public function delete_employee($id){
     //   $sql = "DELETE FROM empleados WHERE id = '" . $id . "'";
     //   try{

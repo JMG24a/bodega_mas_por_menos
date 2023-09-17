@@ -21,96 +21,89 @@
         <label for="">Nombre</label>
         <input
           type="text"
-          name="cedula"
-          id="cedula"
+          name="name"
+          id="name"
           placeholder= <?php echo $this->edit['name'] ?? ""?>
           required
         >
         <label for="">Apellido</label>
         <input
           type="text"
-          name="cedula"
-          id="cedula"
+          name="lastname"
+          id="lastname"
           placeholder= <?php echo $this->edit['lastname'] ?? ""?>
           required
         >
         <label for="">Cedula</label>
         <input
           type="text"
-          name="cedula"
-          id="cedula"
+          name="dni"
+          id="dni"
           placeholder= <?php echo $this->edit['dni'] ?? ""?>
           required
         >
         <label for="">Email</label>
         <input
           type="text"
-          name="cedula"
-          id="cedula"
+          name="email"
+          id="email"
           placeholder= <?php echo $this->edit['email'] ?? ""?>
           required
         >
         <label for="">Edad</label>
         <input
           type="text"
-          name="cedula"
-          id="cedula"
+          name="age"
+          id="age"
           placeholder= <?php echo $this->edit['age'] ?? ""?>
           required
         >
         <label for="">Cargo</label>
         <input
           type="text"
-          name="cedula"
-          id="cedula"
+          name="role"
+          id="role"
           placeholder= <?php echo $this->edit['role'] ?? ""?>
           required
         >
         <label for="">Telefono</label>
         <input
           type="text"
-          name="cedula"
-          id="cedula"
+          name="phone"
+          id="phone"
           placeholder= <?php echo $this->edit['phone'] ?? "" ?>
           required
         >
         <label for="">Direccion</label>
         <input
           type="text"
-          name="cedula"
-          id="cedula"
+          name="address"
+          id="address"
           placeholder= <?php echo $this->edit['address'] ?? ""?>
           required
         >
         <label for="">Referencia</label>
         <input
           type="text"
-          name="cedula"
-          id="cedula"
+          name="reference"
+          id="reference"
           placeholder= <?php echo $this->edit['reference'] ?? ""?>
           required
         >
         <label for="">estado</label>
         <input
           type="text"
-          name="cedula"
-          id="cedula"
+          name="state"
+          id="state"
           placeholder= <?php echo $this->edit['state'] ?? ""?>
           required
         >
         <label for="">Ciudad</label>
         <input
           type="text"
-          name="cedula"
-          id="cedula"
+          name="city"
+          id="city"
           placeholder= <?php echo $this->edit['city'] ?? ""?>
-          required
-        >
-        <input
-          type="password"
-          name="password"
-          id="password"
-          placeholder="Contraceña"
           required
         >
         <input
