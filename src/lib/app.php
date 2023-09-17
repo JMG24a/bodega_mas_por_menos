@@ -22,13 +22,21 @@
         require_once $selectController;
         $controller = new $url[0];
         $controller->loader_model($url[0]);
-
-        if(isset($url[1])){
-          $controller->{$url[1]}();
+        // elementos del arreglo - parametros de la url
+        $params = sizeof($url);
+        if($params > 1){
+          if($params > 2){
+            $param = [];
+            for($i = 2; $i < $params; $i++){
+              array_push($param, $url[$i]);
+            }
+            $controller->{$url[1]}($param);
+          }else{
+            $controller->{$url[1]}();
+          }
         }else{
           $controller->render();
         }
-
       }else{
         $controller = new Errors();
         $controller->render();

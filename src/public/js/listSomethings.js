@@ -2,10 +2,9 @@
 let request = document.getElementById("request").textContent;
 let show = request.split("/")[0];
 
-function requester(url,view){
-  console.log("??", url, view)
+function requester (url, view, method){
   fetch(`${url}`, {
-    method: 'POST',  // O 'GET' según tus necesidades
+    method: method,  // O 'GET' según tus necesidades
     headers: {
         'Content-Type': 'application/json',  // Ajusta los encabezados según tus necesidades
     },
@@ -13,6 +12,7 @@ function requester(url,view){
   })
   .then(response => response.json())  // Puedes ajustar esto según la respuesta esperada
   .then(data => {
+    console.log(data)
     // Manejar la respuesta del servidor aquí (data)
     let object = {
       'employees': function() {
@@ -36,4 +36,4 @@ function requester(url,view){
   });
 }
 
-requester(request,show);
+requester(request,show,'POST');

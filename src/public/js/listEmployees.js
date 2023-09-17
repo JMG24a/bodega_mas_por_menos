@@ -10,7 +10,8 @@ function employees(data){
       <p>${item.name} ${item.lastname}</p>
       <p>${item.role}</p>
       <p>${item.age}</p>
-      <button onclick="buttonHandler('delete', ${item.id})">Eliminar</button>
+      <a href="http://localhost:8080/employees/edit/${item.id}">Editar</a>
+      <button onclick="buttonHandler('delete','employees/delete/${item.id}')">Eliminar</button>
     </div>
     `;
     result = result.concat("",card);

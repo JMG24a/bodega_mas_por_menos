@@ -55,7 +55,7 @@
 
     </div>
   </section>
-  <script src="<?php echo constant('URL');?>public/js/validations.js"></script>
+  <script src="<?php echo constant('URL');?>public/js/validation.js"></script>
   <script src="<?php echo constant('URL');?>public/js/storage.js"></script>
 </body>
 </html>

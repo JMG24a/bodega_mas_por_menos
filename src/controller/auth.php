@@ -10,11 +10,10 @@
     }
 
     function init_session(){
-      $id = $_POST['cedula'];
+      $email = $_POST['email'];
       $password = $_POST['password'];
       try{
-        $response = $this->model->login($id);
-        $employee = $this->model->get_user();
+        $response = $this->model->login($email);
 
         if($response === false){
           $this->view->error = 'Clave o cedula incorrecta';
@@ -22,9 +21,9 @@
           return 0;
         }
 
-        if($employee['password'] === $password){
+        if($response['password'] === $password){
           session_start();
-          $_SESSION['employee'] = $employee;
+          $_SESSION['employee'] = $response;
           header("Location: /home");
         }else{
           $this->view->error = 'Clave o cedula incorrecta';

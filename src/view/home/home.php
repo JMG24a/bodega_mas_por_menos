@@ -6,7 +6,7 @@
   <meta http-equiv="Location" content="http://localhost:8080/">
   <link rel='stylesheet' href="<?php echo constant('URL');?>public/css/home/index.css">
   <script src="<?php echo constant('URL');?>public/js/storages.js"></script>
-  <script src="<?php echo constant('URL');?>public/js/ajax.js"></script>
+  <script src="<?php echo constant('URL');?>public/js/listSomethings.js" defer></script>
   <title>Bodega Comunitaria</title>
 </head>
 <body>
@@ -16,7 +16,7 @@
     <div class="dashBoard-card">
       <section class="dashBoard">
         <div class="dashBoard-invoice">
-          <div style="display: none;" id='request'>home/get_products</div>
+          <div style="display: none;" id='request'>home/get</div>
           <table>
             <tr>
               <td>imagen</td>
@@ -67,6 +67,5 @@
       </section>
     </div>
   </section>
-  <script src="<?php echo constant('URL');?>public/js/validations.js"></script>
 </body>
 </html>

@@ -9,6 +9,9 @@
       session_start();
       $employee = $_SESSION['employee'];
       $this->view->employee = $employee;
+      if($employee['role'] !== 'admin'){
+        header("Location: /home");
+      }
       $this->view->render('home/provider');
     }
 

@@ -2,7 +2,6 @@
   // variables de entorno de la app
   require_once 'config/index.php';
   //modelos para el almacenamiento
-  require_once 'model/employee.php';
   require_once 'model/product.php';
   require_once 'model/db.php';
   // Dependencias de la app
