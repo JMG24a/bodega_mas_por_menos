@@ -25,7 +25,7 @@
       >
         <div class="form-item">
           <span class="form-item-icon material-symbols-rounded">Person</span>
-          <input type="text" name="cedula" id="cedula" placeholder="Usuario" required autofocus>
+          <input type="text" name="email" id="email" placeholder="Usuario" required autofocus>
         </div>
         <p id="error_user"></p>
 
@@ -44,7 +44,7 @@
 
         <?php
           if(strlen ( $this->error ) > 1)
-          echo('<p>' . $this->error . '</p>')
+          echo('<p class="error">' . $this->error . '</p>')
         ?>
         <button id="submit_user">Entrar</button>
       </form>
