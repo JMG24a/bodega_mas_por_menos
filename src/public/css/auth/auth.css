@@ -1,11 +1,6 @@
-@import url(reset.css);
+@import url(../reset.css);
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-
-:root{
-  --theme:linear-gradient(135deg, rgb(32, 32, 32) 50%, rgb(9, 162, 250));
-  --text-color: #fff;
-  --primary-color:rgba(255, 255, 255, .5);
-}
+@import url(../var.css);
 
 html{
   min-height: 100%;
@@ -21,7 +16,7 @@ body{
 }
 .register-card{
   width: 450px;
-  background-color: rgba(255, 255, 255, .2);
+  background-color: var(--primary-color);
   padding: 1.5rem 3rem 3rem 3rem;
   border-radius: 10px;
   position: relative;
@@ -84,20 +79,6 @@ body{
   opacity: .4;
 }
 
-.container-form .checkbox {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-}
-
-.container-form .form-item-other {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: calc(1rem * .8);
-  margin-bottom: .5rem;
-}
-
 .register-card-footer {
   margin-top: 1.5rem;
   font-size: calc(1rem * .8);
@@ -154,7 +135,7 @@ body{
       padding: 2rem 0;
   }
 
-  .login-card {
+  .register-card {
       width: 300px;
       padding: 2rem;
 
