@@ -35,13 +35,6 @@
         </div>
         <p id="error_password"></p>
 
-        <div class="form-item-other">
-          <div class="checkbox">
-            <input type="checkbox" id="RememberMeCheckbox">
-            <label for="RememberMeCheckbox">Recordarme</label>
-          </div>
-        </div>
-
         <?php
           if(strlen ( $this->error ) > 1)
           echo('<p class="error">' . $this->error . '</p>')
