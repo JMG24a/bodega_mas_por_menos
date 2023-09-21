@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Location" content="http://localhost:8080/">
   <link rel='stylesheet' href="<?php echo constant('URL');?>public/css/home/index.css">
-  <script src="<?php echo constant('URL');?>public/js/handler.js" defer></script>
-  <script src="<?php echo constant('URL');?>public/js/listSomethings.js" defer></script>
-  <script src="<?php echo constant('URL');?>public/js/listEmployees.js" defer></script>
+  <script src="<?php echo constant('URL');?>public/js/listSomething.js" defer></script>
+  <script src="<?php echo constant('URL');?>public/js/listEmployee.js" defer></script>
+  <script src="<?php echo constant('URL');?>public/js/handlers.js" defer></script>
   <title>Bodega Comunitaria</title>
 </head>
 <body>

@@ -11,7 +11,7 @@ function employees(data){
       <p>${item.role}</p>
       <p>${item.age}</p>
       <a href="http://localhost:8080/employees/edit/${item.id}">Editar</a>
-      <button onclick="buttonHandler('delete','employees/delete/${item.id}')">Eliminar</button>
+      <button onclick="buttonHandler('delete','employees/deletes/${item.id}')">Eliminar</button>
     </div>
     `;
     result = result.concat("",card);

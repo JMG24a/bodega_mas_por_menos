@@ -98,3 +98,12 @@ CREATE TABLE cuentas_pedidos (
   FOREIGN KEY (id_account) REFERENCES cuentas(id),
   FOREIGN KEY (id_order) REFERENCES pedidos(id)
 );
+
+
+-- INSERT TABLE cuentas_pedidos (
+--   id_account INT,
+--   id_order INT,
+--   -- Definición de la clave foránea
+--   FOREIGN KEY (id_account) REFERENCES cuentas(id),
+--   FOREIGN KEY (id_order) REFERENCES pedidos(id)
+-- );

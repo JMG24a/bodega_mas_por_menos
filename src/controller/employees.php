@@ -48,27 +48,27 @@
 
     function edit_save($param = null){
       $id = $param[0];
-      $data = [];
       $data['id'] = $id;
-      $data['name'] = $_POST['email'];
-      $data['lastname'] = $_POST['password'];
-      $data['dni'] = $_POST['email'];
-      $data['age'] = $_POST['password'];
+      $data['name'] = $_POST['name'];
+      $data['lastname'] = $_POST['lastname'];
+      $data['dni'] = $_POST['dni'];
+      $data['age'] = $_POST['age'];
       $data['email'] = $_POST['email'];
       $data['phone'] = $_POST['phone'];
-      $data['role'] = $_POST['email'];
+      $data['role'] = $_POST['role'];
       $data['password'] = $_POST['password'];
-      $data['address'] = $_POST['password'];
-      $data['reference'] = $_POST['email'];
-      $data['state'] = $_POST['password'];
-      $data['city'] = $_POST['email'];
-
+      $data['address'] = $_POST['address'];
+      $data['reference'] = $_POST['reference'];
+      $data['state'] = $_POST['state'];
+      $data['city'] = $_POST['city'];
+      //guardar o editar informacion
       $this->model->edit_save($data);
       header("Location: /employees");
     }
 
-    function delete($id){
-      $result = $this->model->delete_employee();
+    function deletes($param = null){
+      $id = $param[0];
+      $result = $this->model->delete_employee($id);
       $response = [
         'mensaje' => 'Respuesta exitosa',
         'datos' => $result,  // Los datos que deseas enviar de vuelta al cliente

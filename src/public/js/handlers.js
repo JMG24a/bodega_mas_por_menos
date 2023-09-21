@@ -9,8 +9,11 @@ async function buttonHandler(action,url){
           reject("accion cancelada");
       }
     })
-    .then(()=>{
-      requester(url,show,'DELETE');
+    .then((res)=>{
+      console.log(res, res.toLowerCase())
+      if(res.toLowerCase() === 'yes'){
+        requester(url,show,'POST');
+      }
     })
     .catch(error => console.log(error))
   }

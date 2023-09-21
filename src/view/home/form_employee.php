@@ -14,7 +14,7 @@
     <div class="dashBoard-card">
       <section class="container-items">
       <form
-        action="<?php echo constant('URL');?>/employees/edit_save"
+        action="<?php echo constant('URL') . '/employees/edit_save/' . (isset($this->edit['id']) ? $this->edit['id'] : 'new'); ?>"
         method="POST"
         class="container-form"
       >

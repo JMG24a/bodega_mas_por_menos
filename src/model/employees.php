@@ -67,39 +67,102 @@
       }
     }
 
-    public function edit_save($data){
-      $sql = "SELECT * FROM empleados WHERE id = '" . $data['id'] . "'";
+
+    public function get_employee_by_email($email){
+      $sql = "SELECT * FROM empleados WHERE id = '" . $email . "'";
       try{
         $query = $this->db->connect()->query($sql);
         $row = $query->fetch();
         $query->execute();
         if ($query->rowCount() === 0) {
           // No se encontraron resultados
-          $sql2 = "INSERT INTO `empleados`(`name`, `lastname`, `dni`, `role`, `age`, `email`, `password`, `phone`, `address`, `reference`, `state`, `city`) VALUES ('?','?','?','?','?','?','?','?','?','?','?','?','?')";
-          $insert = $this->db->connect()->query($sql2);
-          $insert->execute([$data]);
+          return false;
+        }
+        return true;
+      }catch(PDOException $e){
+        return false;
+      }
+    }
+
+    public function edit_save($data){
+      try{
+        $exist = $this->get_employee_by_email($data['id']);
+        if(!$exist){
+          // No se encontraron resultados
+          $insert_sql = "INSERT INTO empleados (name, lastname, dni, role, age, email, password, phone, address, reference, state, city)
+          VALUES (:name, :lastname, :dni, :role, :age, :email, :password, :phone, :address, :reference, :state, :city)";
+          $insert = $this->db->connect()->prepare($insert_sql); // Cambia query() a prepare()
+          $insert->execute([
+            ':name' => $data['name'], // Usa los nombres de los parámetros correctos aquí
+            ':lastname' => $data['lastname'],
+            ':dni' => $data['dni'],
+            ':role' => $data['role'],
+            ':age' => $data['age'],
+            ':email' => $data['email'],
+            ':password' => $data['password'],
+            ':phone' => $data['phone'],
+            ':address' => $data['address'],
+            ':reference' => $data['reference'],
+            ':state' => $data['state'],
+            ':city' => $data['city'],
+          ]);
           return $insert;
         }
-        $sql3 = "UPDATE empleados SET name = " . $data['name'] . ", lastname = " . $data['lastname'] . ", dni= " . $data['dni'] . ", role= " . $data['role'] . ", age= " . $data['age'] . ", email= " . $data['email'] . ", password= " . $data['password'] . ", phone= " . $data['phone'] . ", address= " . $data['address'] . ", reference= " . $data['reference'] . ", state= " . $data['state'] .   ", city= " . $data['city'] . " WHERE id =" . $data['id'];
+
+        $idEmpleado = $data['id'];
+        $nuevoNombre = $data['name'];
+        $nuevoApellido = $data['lastname'];
+        $nuevoDni = $data['dni'];
+        $nuevoRole = $data['role'];
+        $nuevaEdad = $data['age'];
+        $nuevoEmail = $data['email'];
+        $nuevaPassword = $data['password'];
+        $nuevoPhone = $data['phone'];
+        $nuevaDireccion = $data['address'];
+        $nuevaReferencia = $data['reference'];
+        $nuevoEstado = $data['state'];
+        $nuevaCiudad = $data['city'];
+
+        $update_sql = "UPDATE empleados SET name = ?, lastname = ?, dni = ?, role = ?, age = ?, email = ?, password = ?, phone = ?, address = ?, reference = ?, state = ?, city = ? WHERE id = ?";
+
+        $update = $this->db->connect()->prepare($update_sql);
+        $update->bindParam(1, $nuevoNombre, PDO::PARAM_STR);
+        $update->bindParam(2, $nuevoApellido, PDO::PARAM_STR);
+        $update->bindParam(3, $nuevoDni, PDO::PARAM_STR);
+        $update->bindParam(4, $nuevoRole, PDO::PARAM_STR);
+        $update->bindParam(5, $nuevaEdad, PDO::PARAM_INT);
+        $update->bindParam(6, $nuevoEmail, PDO::PARAM_STR);
+        $update->bindParam(7, $nuevaPassword, PDO::PARAM_STR);
+        $update->bindParam(8, $nuevoPhone, PDO::PARAM_STR);
+        $update->bindParam(9, $nuevaDireccion, PDO::PARAM_STR);
+        $update->bindParam(10, $nuevaReferencia, PDO::PARAM_STR);
+        $update->bindParam(11, $nuevoEstado, PDO::PARAM_STR);
+        $update->bindParam(12, $nuevaCiudad, PDO::PARAM_STR);
+        $update->bindParam(13, $idEmpleado, PDO::PARAM_INT);
+
+        $sql3 = $update->execute();
 
         return $sql3;
         }catch(PDOException $e){
-          echo $error;
+          echo $e;
         }
     }
 
-    // public function delete_employee($id){
-    //   $sql = "DELETE FROM empleados WHERE id = '" . $id . "'";
-    //   try{
-    //     $query = $this->db->connect()->query($sql);
-    //     $row = $query->fetch();
-    //     echo $row;
-    //     return 0;
-    //   }catch(PDOException $e){
-    //     return false;
-    //   }
-
-    // }
+    public function delete_employee($id){
+      $sql = "DELETE FROM empleados WHERE id = :id";
+      try{
+        $query = $this->db->connect()->prepare($sql);
+        $query->bindParam(':id', $id, PDO::PARAM_INT);
+        if ($query->execute()) {
+          $employees = $this->get_employees();
+          return $employees;
+      } else {
+          return [];
+      }
+      }catch(PDOException $e){
+        return false;
+      }
+    }
 
     public function get_user(){
       //buscar empleado registrado

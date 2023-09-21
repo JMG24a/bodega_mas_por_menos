@@ -3,6 +3,7 @@ let request = document.getElementById("request").textContent;
 let show = request.split("/")[0];
 
 function requester (url, view, method){
+  console.log(url, view, method ,"????")
   fetch(`${url}`, {
     method: method,  // O 'GET' según tus necesidades
     headers: {
@@ -12,7 +13,6 @@ function requester (url, view, method){
   })
   .then(response => response.json())  // Puedes ajustar esto según la respuesta esperada
   .then(data => {
-    console.log(data)
     // Manejar la respuesta del servidor aquí (data)
     let object = {
       'employees': function() {
